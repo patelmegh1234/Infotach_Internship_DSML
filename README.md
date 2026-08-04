@@ -4,7 +4,7 @@ The **AcousticSpace Frontend** is the user interface component of the AcousticSp
 
 The frontend provides an interactive interface for users to upload audio files, interact with the application, and view the results returned by the backend detection system.
 
----
+....
 
 ## 🎯 Project Objective
 
