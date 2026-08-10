@@ -45,7 +45,13 @@ FEATURE_COLUMNS = [
     "reverb_tail_ratio",
     "energy_decay_slope",
     "background_consistency",
-]
+    "breath_event_count",
+    "breath_duration_mean",
+    "breath_duration_std",
+    "breath_interval_mean",
+    "breath_interval_std",
+    "breathing_cadence_score",
+    ]
 
 
 def train():
