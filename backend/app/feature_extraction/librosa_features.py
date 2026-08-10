@@ -1,6 +1,8 @@
 import librosa
 import numpy as np
-
+from backend.app.feature_extraction.breathing_cadence import (
+    compute_breathing_cadence_features,
+)
 
 def compute_silence_ratio(y, frame_length=2048, hop_length=512):
     """
@@ -196,5 +198,18 @@ def extract_features(audio_path):
     features["reverb_tail_ratio"] = compute_reverb_tail_ratio(y)
     features["energy_decay_slope"] = compute_energy_decay_slope(y)
     features["background_consistency"] = compute_background_consistency(y, sr)
+    # -----------------------------
+    # Breathing Cadence Features
+    # -----------------------------
 
+    breathing_features = (
+        compute_breathing_cadence_features(
+            y,
+            sr
+        )
+    )
+
+    features.update(
+        breathing_features
+    )
     return features
